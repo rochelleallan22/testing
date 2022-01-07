@@ -12,8 +12,13 @@
 # Any questions? Feel free to reach out to Jake! jbrandt@mindex.com
 
 # Replace this value with your IAM user's SSH key ID for the edtwordpress AWS account.
-EDT_WORDPRESS_SSH_KEY_ID='APKAVN7JHV7BVWL5I4WA'
+EDT_WORDPRESS_SSH_KEY_ID='your-key-id-here'
 
+# Replace this value with your IAM user's SSH key ID for the Monro Prod AWS account.
+MONRO_PROD_SSH_KEY_ID='your-key-id-here'
+
+# Replace this value with your IAM user's SSH key ID for the Monro CMS AWS account.
+MONRO_CMS_SSH_KEY_ID='your-key-id-here'
 
 ###################################
 # No edits required below this line
@@ -70,11 +75,9 @@ EDT_WORDPRESS_REPO_NAMES=( \
     'wordpress-familyfirst' \
     'wordpress-icircle' \
     'wordpress-ses' \
-    'wordpress-template' \
+    'wordpress-template'
 	'bastion_scripts' \
 	'greenlight_web_api')
-
-
 
 echo ''
 echo 'This process may take quite some time to complete (44+ GB of data)...'
@@ -89,6 +92,5 @@ do
         echo "Skipping $repo; already exists locally"
     fi
 done
-
 
 cd ../
